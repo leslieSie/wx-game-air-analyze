@@ -1,11 +1,11 @@
 import Sprite from '../base/sprite'
 
-const screenWidth  = window.innerWidth
+const screenWidth = window.innerWidth
 const screenHeight = window.innerHeight
 
-const BG_IMG_SRC   = 'images/bg.jpg'
-const BG_WIDTH     = 512
-const BG_HEIGHT    = 512
+const BG_IMG_SRC = 'images/bg.jpg'
+const BG_WIDTH = 512
+const BG_HEIGHT = 512
 
 /**
  * 游戏背景类
@@ -23,7 +23,7 @@ export default class BackGround extends Sprite {
   update() {
     this.top += 2
 
-    if ( this.top >= screenHeight )
+    if (this.top >= screenHeight)
       this.top = 0
   }
 

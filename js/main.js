@@ -29,11 +29,11 @@ export default class Main {
     )
 
     this.bg = new BackGround(ctx); //   渲染背景
-    this.player = new Player(ctx); // 
-    this.gameinfo = new GameInfo();
+    this.player = new Player(ctx); // 渲染用户飞机
+    this.gameinfo = new GameInfo();// 渲染计分
     this.music = new Music();
 
-    this.bindLoop = this.loop.bind(this)
+    this.bindLoop = this.loop.bind(this);
     this.hasEventBind = false
 
     // 清除上一局的动画
@@ -52,7 +52,7 @@ export default class Main {
   enemyGenerate() {
     if (databus.frame % 30 === 0) {
       let enemy = databus.pool.getItemByClass('enemy', Enemy)
-      enemy.init(6)
+      enemy.init(6);
       databus.enemys.push(enemy)
     }
   }

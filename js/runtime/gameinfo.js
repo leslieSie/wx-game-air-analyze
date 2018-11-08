@@ -1,4 +1,4 @@
-const screenWidth  = window.innerWidth
+const screenWidth = window.innerWidth
 const screenHeight = window.innerHeight
 
 let atlas = new Image()
@@ -7,7 +7,7 @@ atlas.src = 'images/Common.png'
 export default class GameInfo {
   renderGameScore(ctx, score) {
     ctx.fillStyle = "#ffffff"
-    ctx.font      = "20px Arial"
+    ctx.font = "20px Arial"
 
     ctx.fillText(
       score,
@@ -16,11 +16,17 @@ export default class GameInfo {
     )
   }
 
+  /**
+   * 
+   * @param {*} ctx 
+   * @param {*} score 
+   * 
+   */
   renderGameOver(ctx, score) {
     ctx.drawImage(atlas, 0, 0, 119, 108, screenWidth / 2 - 150, screenHeight / 2 - 100, 300, 300)
 
     ctx.fillStyle = "#ffffff"
-    ctx.font    = "20px Arial"
+    ctx.font = "20px Arial"
 
     ctx.fillText(
       '游戏结束',
@@ -55,8 +61,8 @@ export default class GameInfo {
     this.btnArea = {
       startX: screenWidth / 2 - 40,
       startY: screenHeight / 2 - 100 + 180,
-      endX  : screenWidth / 2  + 50,
-      endY  : screenHeight / 2 - 100 + 255
+      endX: screenWidth / 2 + 50,
+      endY: screenHeight / 2 - 100 + 255
     }
   }
 }

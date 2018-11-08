@@ -51,8 +51,8 @@ export default class Player extends Sprite {
    * 同时限定飞机的活动范围限制在屏幕中
    */
   setAirPosAcrossFingerPosZ(x, y) {
-    let disX = x - this.width / 2
-    let disY = y - this.height / 2
+    let disX = x - this.width / 2;// 重新计算移动后中点X轴的坐标
+    let disY = y - this.height / 2; // 重新计算移动后Y轴的坐标
 
     if (disX < 0)
       disX = 0
@@ -78,10 +78,9 @@ export default class Player extends Sprite {
     canvas.addEventListener('touchstart', ((e) => {
       e.preventDefault()
 
-      let x = e.touches[0].clientX
-      let y = e.touches[0].clientY
+      let x = e.touches[0].clientX;// 获取手指触发的X坐标
+      let y = e.touches[0].clientY;// 获取手指触发的Y坐标
 
-      console.log(`x is ${x} and y is ${y}`);
       if (this.checkIsFingerOnAir(x, y)) { // 判断触发的是否为飞机
         this.touched = true
 
@@ -99,7 +98,7 @@ export default class Player extends Sprite {
       if (this.touched)
         this.setAirPosAcrossFingerPosZ(x, y)
 
-    }).bind(this))
+    }).bind(this));
 
     canvas.addEventListener('touchend', ((e) => {
       e.preventDefault()
